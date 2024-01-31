@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="anchorPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="462.0" prefWidth="688.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller">
+   <children>
+      <MenuBar layoutY="2.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <menus>
+            <Menu mnemonicParsing="false" text="Archivo">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#savePDF" text="Guardar PDF" />
+                  <MenuItem mnemonicParsing="false" onAction="#exit" text="Salir" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Ayuda">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#showReadme" text="Acerca de" />
+                  <MenuItem disable="true" mnemonicParsing="false" text="Suscripción" />
+               </items>
+            </Menu>
+         </menus>
+      </MenuBar>
+      <Button fx:id="directoryButton" layoutX="26.0" layoutY="36.0" mnemonicParsing="false" onAction="#setDirectory" prefHeight="25.0" prefWidth="107.0" text="Guardar en" AnchorPane.leftAnchor="25.0" AnchorPane.topAnchor="36.0" />
+      <TextField fx:id="directoryField" layoutX="147.0" layoutY="36.0" prefHeight="25.0" prefWidth="477.0" promptText="Selecciona donde guardar el certificado" AnchorPane.leftAnchor="147.0" AnchorPane.topAnchor="36.0">
+         <padding>
+            <Insets left="5.0" right="20.0" />
+         </padding></TextField>
+      <Separator layoutX="57.0" layoutY="193.0" prefHeight="4.0" prefWidth="638.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="70.0" />
+      <AnchorPane layoutY="85.0" minHeight="0.0" minWidth="0.0" prefHeight="113.0" prefWidth="688.0" AnchorPane.bottomAnchor="280.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="70.0">
+         <children>
+            <Label layoutX="26.0" layoutY="10.0" prefHeight="19.0" prefWidth="137.0" text="Datos del certificado:" AnchorPane.leftAnchor="25.0" AnchorPane.topAnchor="10.0">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+            <Label layoutX="52.0" layoutY="81.0" text="Tipo de comprobante" AnchorPane.leftAnchor="52.0" AnchorPane.topAnchor="75.0">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <Label layoutX="364.0" layoutY="75.0" text="Codigo de comprobante" AnchorPane.topAnchor="75.0">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <TextField fx:id="ticketCodeField" layoutX="528.0" layoutY="72.0" prefHeight="25.0" prefWidth="120.0" AnchorPane.leftAnchor="528.0" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="72.0" />
+            <Label layoutX="52.0" layoutY="38.0" text="N° de certificado" AnchorPane.leftAnchor="52.0" AnchorPane.topAnchor="40.0">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <TextField fx:id="certificateNumberField" layoutX="192.0" layoutY="37.0" prefHeight="25.0" prefWidth="125.0" AnchorPane.leftAnchor="192.0" AnchorPane.topAnchor="37.0" />
+            <Label layoutX="364.0" layoutY="40.0" text="Fecha de emisión" AnchorPane.topAnchor="40.0">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <DatePicker fx:id="datePicker" layoutX="474.0" layoutY="37.0" onAction="#pickDate" promptText="Ingrese una fecha" AnchorPane.leftAnchor="474.0" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="37.0" />
+            <ComboBox fx:id="ticketTypeBox" layoutX="192.0" layoutY="72.0" onAction="#setTicketType" prefWidth="150.0" promptText="Seleccione un tipo" />
+         </children>
+      </AnchorPane>
+      <Separator layoutX="47.0" layoutY="183.0" prefHeight="4.0" prefWidth="688.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="179.0" />
+      <AnchorPane layoutY="189.0" minHeight="0.0" minWidth="0.0" prefHeight="228.0" prefWidth="688.0" AnchorPane.bottomAnchor="45.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="180.0">
+         <children>
+            <Label layoutX="24.0" layoutY="14.0" text="Datos del negocio:" AnchorPane.leftAnchor="25.0" AnchorPane.topAnchor="10.0">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+            <Label layoutX="50.0" layoutY="40.0" text="Razon social" AnchorPane.leftAnchor="52.0" AnchorPane.topAnchor="40.0">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <TextField fx:id="businessNameField" layoutX="139.0" layoutY="32.0" prefHeight="25.0" prefWidth="515.0" AnchorPane.leftAnchor="135.0" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="37.0" />
+            <Label layoutX="47.0" layoutY="71.0" text="Representante legal" AnchorPane.leftAnchor="52.0" AnchorPane.topAnchor="75.0">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <TextField fx:id="ownerField" layoutX="182.0" layoutY="72.0" prefHeight="25.0" prefWidth="466.0" AnchorPane.leftAnchor="180.0" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="72.0" />
+            <Label layoutX="47.0" layoutY="102.0" text="Tipo de negocio" AnchorPane.leftAnchor="52.0" AnchorPane.topAnchor="110.0">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <TextField fx:id="businessTypeField" layoutX="158.0" layoutY="107.0" prefHeight="25.0" prefWidth="491.0" AnchorPane.leftAnchor="155.0" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="107.0" />
+            <Label layoutX="55.0" layoutY="133.0" text="Dirección" AnchorPane.leftAnchor="52.0" AnchorPane.topAnchor="145.0">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <TextField fx:id="addressField" layoutX="121.0" layoutY="142.0" prefHeight="25.0" prefWidth="526.0" AnchorPane.leftAnchor="120.0" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="142.0" />
+            <Label layoutX="45.0" layoutY="145.0" text="Nivel higiénico - sanitario" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="180.0">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <RadioButton fx:id="excellentRadio" layoutX="50.0" layoutY="174.0" mnemonicParsing="false" onAction="#setSanitaryLevel" prefHeight="17.0" prefWidth="174.0" text="Excelente" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="464.0" AnchorPane.topAnchor="205.0">
+               <toggleGroup>
+                  <ToggleGroup fx:id="sanitaryLevelGroup" />
+               </toggleGroup></RadioButton>
+            <RadioButton fx:id="niceRadio" layoutX="228.0" layoutY="185.0" mnemonicParsing="false" onAction="#setSanitaryLevel" prefHeight="17.0" prefWidth="174.0" text="Bueno" toggleGroup="$sanitaryLevelGroup" AnchorPane.leftAnchor="228.0" AnchorPane.rightAnchor="286.0" AnchorPane.topAnchor="205.0" />
+            <RadioButton fx:id="regularRadio" layoutX="403.0" layoutY="185.0" mnemonicParsing="false" onAction="#setSanitaryLevel" prefHeight="17.0" prefWidth="166.0" text="Regular" toggleGroup="$sanitaryLevelGroup" AnchorPane.leftAnchor="403.0" AnchorPane.rightAnchor="119.0" AnchorPane.topAnchor="205.0" />
+            <RadioButton fx:id="deficientRadio" layoutX="555.0" layoutY="173.0" mnemonicParsing="false" onAction="#setSanitaryLevel" text="Deficiente" toggleGroup="$sanitaryLevelGroup" AnchorPane.leftAnchor="573.0" AnchorPane.topAnchor="205.0" />
+         </children>
+      </AnchorPane>
+      <Separator layoutY="387.0" prefHeight="4.0" prefWidth="638.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="415.0" />
+      <Button fx:id="saveButton" layoutX="464.0" layoutY="424.0" mnemonicParsing="false" onAction="#savePDF" text="Guardar Certificado" AnchorPane.rightAnchor="104.0" AnchorPane.topAnchor="427.0" />
+      <Button fx:id="cleanButton" layoutX="37.0" layoutY="424.0" mnemonicParsing="false" onAction="#clean" text="Limpiar" AnchorPane.leftAnchor="37.0" AnchorPane.topAnchor="427.0" />
+      <Button fx:id="closeButton" layoutX="612.0" layoutY="424.0" minWidth="-Infinity" mnemonicParsing="false" onAction="#exit" text="Salir" AnchorPane.rightAnchor="37.0" AnchorPane.topAnchor="427.0" />
+      <Button fx:id="directoryButton2" layoutX="620.0" layoutY="36.0" mnemonicParsing="false" onAction="#setDirectory" prefHeight="25.0" prefWidth="19.0" text="Button" AnchorPane.rightAnchor="40.0" />
+   </children>
+</AnchorPane>
