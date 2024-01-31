@@ -9,8 +9,8 @@ Este proyecto es un generador de certificados para el área de Salud Ambiental d
 
 ## Instrucciones de Uso
 
-1. **Compilar el Proyecto:** Utiliza Maven para compilar el proyecto (Opcional).
-    Exporta el proyecto como Runable JAR
+1. **Compilar el Proyecto:** Utiliza Maven para compilar el proyecto o Exporta el proyecto como Runable JAR.
+    También puedes ejecutarlo directamente en el JDE de tu preferencia, solo debes descomentar las rutas de la plantilla, la fuente, el FXML y el .CSS.
 
 2. **Ejecutar la Aplicación:** Ejecuta la aplicación JavaFX generada.
     ```bash
